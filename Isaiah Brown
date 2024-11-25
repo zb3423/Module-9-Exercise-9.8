@@ -1,0 +1,87 @@
+public class Fan {
+    // Constants for fan speed
+    public static final int SLOW = 1;
+    public static final int MEDIUM = 2;
+    public static final int FAST = 3;
+
+    // Private data fields
+    private int speed; // Speed of the fan
+    private boolean on; // Fan on/off state
+    private double radius; // Radius of the fan
+    private String color; // Color of the fan
+
+    // No-arg constructor to initialize default values
+    public Fan() {
+        this.speed = SLOW;
+        this.on = false;
+        this.radius = 5;
+        this.color = "blue";
+    }
+
+    // Accessor and mutator methods for speed
+    public int getSpeed() {
+        return speed;
+    }
+
+    public void setSpeed(int speed) {
+        this.speed = speed;
+    }
+
+    // Accessor and mutator methods for on
+    public boolean isOn() {
+        return on;
+    }
+
+    public void setOn(boolean on) {
+        this.on = on;
+    }
+
+    // Accessor and mutator methods for radius
+    public double getRadius() {
+        return radius;
+    }
+
+    public void setRadius(double radius) {
+        this.radius = radius;
+    }
+
+    // Accessor and mutator methods for color
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    // toString method to return the fan's description
+    @Override
+    public String toString() {
+        if (on) {
+            return "Fan speed: " + speed + ", color: " + color + ", radius: " + radius;
+        } else {
+            return "Fan color: " + color + ", radius: " + radius + ", fan is off";
+        }
+    }
+
+    // Main method to test the Fan class
+    public static void main(String[] args) {
+        // Create the first Fan object
+        Fan fan1 = new Fan();
+        fan1.setSpeed(Fan.FAST);
+        fan1.setRadius(10);
+        fan1.setColor("yellow");
+        fan1.setOn(true);
+
+        // Create the second Fan object
+        Fan fan2 = new Fan();
+        fan2.setSpeed(Fan.MEDIUM);
+        fan2.setRadius(5);
+        fan2.setColor("blue");
+        fan2.setOn(false);
+
+        // Display the Fan objects
+        System.out.println(fan1);
+        System.out.println(fan2);
+    }
+}
